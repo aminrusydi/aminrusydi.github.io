@@ -20,7 +20,11 @@
 </head>
 
 <body>
-  <div id="player"></div>
+  <audio controls autoplay>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
 
 
@@ -58,37 +62,7 @@
   </div>
   <!-- Card Wider -->   
 </div>
-<script>
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '400',
-      width: '600',
-      videoId: 'onldzSzdqlM',
-      playerVars: { 
-   'playlist': 'XCHMbYv70o8',
-   'loop': 1,
-   'controls' : 0, 
-   'rel' : 0,
-   'fs' : 0,
-   'showinfo' : 0,
-   'cc_load_policy' : 0,
-   'iv_load_policy' : 3,
-   'modestbranding' : 1
-  },
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  }
-  function onPlayerReady(event) {
-    event.target.playVideo();
-  }
-</script>
+
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
