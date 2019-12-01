@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <iframe width=”560″ height=”315″ src=”https://www.youtube.com/embed/HwqVB5X0laY?&autoplay=1″ frameborder=”0″ allowfullscreen></iframe>
+  <div id="player"></div>
 
 
 
@@ -58,7 +58,26 @@
   </div>
   <!-- Card Wider -->   
 </div>
-
+<script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '720',
+      width: '1280',
+      videoId: 'onldzSzdqlM',
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+</script>
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
